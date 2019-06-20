@@ -4,10 +4,12 @@ public abstract class MythicalCreature {
 
     protected String name;
     protected Integer health;
+    protected int attackPower;
 
-    public MythicalCreature(String name, Integer health){
+    public MythicalCreature(String name, Integer health, int attackPower){
         this.name = name;
         this.health = health;
+        this.attackPower = attackPower;
     }
 
     public String getName() {
@@ -22,4 +24,7 @@ public abstract class MythicalCreature {
         health += damage;
     }
 
+    public int getAttackPower() {
+        return attackPower;
+    }
 }
