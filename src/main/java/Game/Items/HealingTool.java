@@ -5,7 +5,7 @@ public class HealingTool extends Item {
     private HealingToolType healingToolType;
 
     public HealingTool(HealingToolType healingToolType){
-        super();
+        super(healingToolType.getWeight());
         this.healingToolType = healingToolType;
 
     }

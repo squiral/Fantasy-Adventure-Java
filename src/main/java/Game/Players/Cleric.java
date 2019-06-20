@@ -1,17 +1,18 @@
 package Game.Players;
 
 import Game.Behaviours.IHealable;
+import Game.Items.HealingTool;
 
 public class Cleric extends Player {
 
-    private IHealable healingTool;
+    private HealingTool healingTool;
 
-    public Cleric(String name, int carryWeightMax, IHealable healingTool){
+    public Cleric(String name, int carryWeightMax, HealingTool healingTool){
         super(name, carryWeightMax);
         this.healingTool = healingTool;
     }
 
-    public IHealable getHealingTool() {
+    public HealingTool getHealingTool() {
         return healingTool;
     }
 }
