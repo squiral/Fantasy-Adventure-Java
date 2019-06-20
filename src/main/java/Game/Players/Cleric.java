@@ -8,7 +8,7 @@ public class Cleric extends Player {
     private HealingTool healingTool;
 
     public Cleric(String name, int carryWeightMax, HealingTool healingTool){
-        super(name, carryWeightMax);
+        super(name, carryWeightMax, healingTool.getWeight());
         this.healingTool = healingTool;
     }
 

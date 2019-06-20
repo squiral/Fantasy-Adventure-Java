@@ -7,4 +7,8 @@ public abstract class Item {
     public Item(int weight){
         this.weight = weight;
     }
+
+    public int getWeight(){
+        return this.weight;
+    }
 }
