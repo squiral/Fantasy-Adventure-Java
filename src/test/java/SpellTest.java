@@ -16,6 +16,6 @@ public class SpellTest {
 
     @Test
     public void canGetSpellDamage(){
-        assertEquals(15, SpellType.LIGHTNING.getValue());
+        assertEquals(15, spell.type().getValue());
     }
 }

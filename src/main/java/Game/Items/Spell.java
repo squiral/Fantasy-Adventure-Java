@@ -10,5 +10,7 @@ public class Spell extends Item {
     }
 
 
-
+    public SpellType type() {
+        return this.type;
+    }
 }

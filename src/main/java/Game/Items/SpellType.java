@@ -1,8 +1,8 @@
 package Game.Items;
 
 public enum SpellType {
-    FIRE(15),
-    ICE(15),
+    FIRE(20),
+    ICE(10),
     LIGHTNING(15);
 
     private final int value;
