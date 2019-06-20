@@ -1,4 +1,16 @@
 package Game.Items;
 
-public class Spell {
+public class Spell extends Item {
+
+    private SpellType type;
+
+    public Spell(SpellType type) {
+        super(1);
+        this.type = type;
+    }
+
+
+    public SpellType type() {
+        return this.type;
+    }
 }
