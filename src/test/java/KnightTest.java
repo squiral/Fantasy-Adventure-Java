@@ -5,8 +5,8 @@ public class KnightTest {
 
     Knight knight;
 
-    @Before
-    public void before(){
-        knight = new Knight("Sir Square Jaw", )
-    }
+//    @Before
+//    public void before(){
+//        knight = new Knight("Sir Square Jaw", );
+//    }
 }

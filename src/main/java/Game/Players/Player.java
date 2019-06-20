@@ -6,7 +6,7 @@ public abstract class Player {
 
     private String name;
     private int health;
-    private ArrayList<Item> inventory;
+//    private ArrayList<Item> inventory;
     private int inventorySize;
     private int carryWeightMax;
 
@@ -34,10 +34,10 @@ public abstract class Player {
         return carryWeightMax;
     }
 
-    public void addItem(Item item){
-        if(this.inventory.size() < inventorySize) {
-            this.inventory.add(item);
-        }
-    }
+//    public void addItem(Item item){
+//        if(this.inventory.size() < inventorySize) {
+//            this.inventory.add(item);
+//        }
+//    }
 
 }
