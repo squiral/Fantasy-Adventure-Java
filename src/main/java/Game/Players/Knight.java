@@ -10,4 +10,5 @@ public class Knight extends Fighter {
         super(name, weapon);
         this.armourDefence = 5;
     }
+
 }
