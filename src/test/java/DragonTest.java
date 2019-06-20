@@ -10,7 +10,7 @@ public class DragonTest {
 
     @Before
     public void before(){
-        dragon = new Dragon("Death Terry", 1000, 10 );
+        dragon = new Dragon("Death Terry", 1000);
     }
 
     @Test
