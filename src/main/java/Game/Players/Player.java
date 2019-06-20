@@ -43,7 +43,7 @@ public abstract class Player {
     }
 
     public void takeDamage(int damage){
-        this.health += damage;
+        this.health -= damage;
     }
 
 }

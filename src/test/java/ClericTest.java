@@ -4,10 +4,8 @@ import Game.Items.HealingToolType;
 import Game.Players.Cleric;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.HelloWorld;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class ClericTest {
 

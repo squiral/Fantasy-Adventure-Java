@@ -17,9 +17,9 @@ public class Game {
     private Cleric cleric;
 
 
-    public Game(){
-
-
+    public Game(Player player, MythicalCreature mythicalCreature){
+        this.player = player;
+        this.mythicalCreature = mythicalCreature;
         }
 
     public void dealDamage(MythicalCreature mythicalCreature, Player player){
