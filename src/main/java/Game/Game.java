@@ -20,11 +20,10 @@ public class Game {
     public Game(){
 
 
-
-
         }
 
     public void dealDamage(MythicalCreature mythicalCreature, Player player){
-        
+        int damage = mythicalCreature.getAttackPower();
+        player.takeDamage(damage);
     }
 }
