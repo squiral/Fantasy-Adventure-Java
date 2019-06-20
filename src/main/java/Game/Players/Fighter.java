@@ -1,12 +1,13 @@
 package Game.Players;
 
-import Game.Behaviours.IBashable;
+import Game.Items.Weapon;
+import Game.Items.WeaponType;
 
 public abstract class Fighter extends Player {
 
-    private IBashable weapon;
+    private Weapon weapon;
 
-    public Fighter(String name, IBashable weapon){
+    public Fighter(String name, Weapon weapon){
         super(name, 50);
         this.weapon = weapon;
     }
