@@ -1,4 +1,5 @@
 package Game.Items;
 
-public class HealingTool {
+public class HealingTool extends Item {
+
 }
