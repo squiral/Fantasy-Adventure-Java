@@ -10,10 +10,10 @@ public abstract class Player {
     private int inventorySize;
     private int carryWeightMax;
 
-    public Player(String name, int health, int inventorySize, int carryWeightMax){
+    public Player(String name, int carryWeightMax){
         this.name = name;
-        this.health = health;
-        this.inventorySize = inventorySize;
+        this.health = 100;
+        this.inventorySize = 4;
         this.carryWeightMax = carryWeightMax;
     }
 

@@ -6,8 +6,8 @@ public abstract class Fighter extends Player {
 
     private IBashable weapon;
 
-    public Fighter(String name, int health, int inventorySize, int carryWeightMax, IBashable weapon){
-        super(name, health, inventorySize, 50);
+    public Fighter(String name, IBashable weapon){
+        super(name, 50);
         this.weapon = weapon;
     }
 }
