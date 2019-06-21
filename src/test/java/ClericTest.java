@@ -9,21 +9,63 @@ import static org.junit.Assert.assertEquals;
 public class ClericTest {
 
     Cleric cleric;
-    HealingTool healingTool;
+    HealingTool healingTool1;
+    HealingTool healingTool2;
+    HealingTool healingTool3;
+    HealingTool healingTool4;
 
     @Before
     public void before() {
-        healingTool = new HealingTool(HealingToolType.VAPORUB);
-        cleric = new Cleric("Clarence", 10, healingTool);
+        healingTool1 = new HealingTool(HealingToolType.VAPORUB);
+        healingTool2 = new HealingTool(HealingToolType.CALPOL);
+        healingTool3 = new HealingTool(HealingToolType.PLASTER);
+        healingTool4 = new HealingTool(HealingToolType.SPLINT);
+        cleric = new Cleric("Clarence", 20, healingTool1);
     }
 
     @Test
-    public void canGetName(){
+    public void hasName(){
         assertEquals("Clarence", cleric.getName());
     }
 
     @Test
-    public void canGetHealingTool(){
-        assertEquals(healingTool, cleric.getHealingTool());
+    public void hasHealingTool(){
+        assertEquals(healingTool1, cleric.getHealingTool());
     }
+
+    @Test
+    public void has100health() {
+        assertEquals(100, cleric.getHealth());
+    }
+
+    @Test
+    public void hasInventorySize() {
+        assertEquals(4, cleric.getInventorySize());
+    }
+
+    @Test
+    public void hasMaxCarryWeight() {
+        assertEquals(20, cleric.getMaxCarryWeight());
+    }
+
+    @Test
+    public void canAddItem(){
+        cleric.addItem(healingTool1);
+        assertEquals(1, cleric.getNumOfItemsInInventory());
+    }
+
+    @Test
+    public void cantAddItemIfInventoryFull(){
+        cleric.addItem(healingTool1);
+        cleric.addItem(healingTool2);
+        cleric.addItem(healingTool3);
+        cleric.addItem(healingTool4);
+        cleric.addItem(healingTool3);
+        assertEquals(4, cleric.getNumOfItemsInInventory());
+    }
+
+
+
 }
+
+

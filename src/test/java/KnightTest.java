@@ -73,7 +73,7 @@ public class KnightTest {
     @Test
     public void canAddItemWeight(){
         knight.addItem(healingTool);
-        assertEquals(22, knight.getCurrentWeightTotal());
+        assertEquals(14, knight.getCurrentWeightTotal());
     }
 
     @Test
@@ -103,6 +103,12 @@ public class KnightTest {
     public void cantRecoverOver100Health(){
         knight.recover(20);
         assertEquals(100, knight.getHealth());
+    }
+
+    @Test
+    public void canEquipWeapon(){
+        knight.equipWeapon(weapon2);
+        assertEquals(WeaponType.DAGGER, knight.getWeapon().getType());
     }
 
 }

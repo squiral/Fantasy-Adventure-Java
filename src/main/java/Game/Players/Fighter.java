@@ -17,11 +17,13 @@ public abstract class Fighter extends Player implements IFightable{
         return this.weapon;
     }
 
+
     public int fight(){
         return  this.weapon.getDamage();
     }
 
-
-
+    public void equipWeapon(Weapon newWeapon) {
+        this.weapon = newWeapon;
+    }
 
 }

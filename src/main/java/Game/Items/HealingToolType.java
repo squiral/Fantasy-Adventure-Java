@@ -1,10 +1,10 @@
 package Game.Items;
 
 public enum HealingToolType {
-    VAPORUB(10, 10),
-    CALPOL(30, 5),
+    VAPORUB(10, 2),
+    CALPOL(30, 1),
     PLASTER(20, 1),
-    SPLINT(20, 20);
+    SPLINT(20, 2);
 
     private final int healingValue;
     private final int weight;
