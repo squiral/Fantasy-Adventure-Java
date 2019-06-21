@@ -53,5 +53,11 @@ public class BarbarianTest {
         assertEquals(1, barbarian.getNumOfItemsInInventory());
     }
 
+    @Test
+    public void canGoBerzerk(){
+        barbarian.goBerzerk();
+        assertEquals(10, this.barbarian.fight());
+    }
+
 
 }

@@ -6,7 +6,7 @@ import Game.Items.WeaponType;
 
 public abstract class Fighter extends Player implements IFightable{
 
-    private Weapon weapon;
+    protected Weapon weapon;
 
     public Fighter(String name, Weapon weapon){
         super(name, 50, weapon.getWeight());
