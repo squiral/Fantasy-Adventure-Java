@@ -68,5 +68,13 @@ public class WizardTest {
         assertEquals(90, wizard.getHealth());
     }
 
+    @Test
+    public void canSetInitiative(){
+        assertEquals(0, wizard.getInitiative());
+
+        wizard.setInitiative();
+        assertTrue(wizard.getInitiative() > 0 && wizard.getInitiative() <= 20);
+    }
+
 
 }
