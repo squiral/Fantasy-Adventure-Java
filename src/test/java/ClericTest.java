@@ -65,6 +65,31 @@ public class ClericTest {
         assertEquals(4, cleric.getNumOfItemsInInventory());
     }
 
+    @Test
+    public void canTakeDamage(){
+        cleric.takeDamage(10);
+        assertEquals(90, cleric.getHealth());
+    }
+
+    @Test
+    public void canRecover(){
+        cleric.takeDamage(30);
+        cleric.recover(10);
+        assertEquals(80, cleric.getHealth());
+    }
+
+    @Test
+    public void cantRecoverOver100Health(){
+        cleric.recover(20);
+        assertEquals(100, cleric.getHealth());
+    }
+
+    @Test
+    public void canEquipWeapon(){
+        cleric.equipHealingTool(healingTool1);
+        assertEquals(HealingToolType.VAPORUB, cleric.getHealingTool().getType());
+    }
+
 
 
 }
