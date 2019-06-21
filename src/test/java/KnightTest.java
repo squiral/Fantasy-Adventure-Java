@@ -73,7 +73,7 @@ public class KnightTest {
     @Test
     public void canAddItemWeight(){
         knight.addItem(healingTool);
-        assertEquals(22, knight.getCurrentWeightTotal());
+        assertEquals(14, knight.getCurrentWeightTotal());
     }
 
     @Test
