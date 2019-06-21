@@ -105,4 +105,10 @@ public class KnightTest {
         assertEquals(100, knight.getHealth());
     }
 
+    @Test
+    public void canEquipWeapon(){
+        knight.equipWeapon(weapon2);
+        assertEquals(WeaponType.DAGGER, knight.getWeapon().getType());
+    }
+
 }
