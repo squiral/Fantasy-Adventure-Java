@@ -1,24 +1,29 @@
-import Game.Items.HealingTool;
-import Game.Items.HealingToolType;
-import Game.Items.Weapon;
-import Game.Items.WeaponType;
-import Game.Players.Cleric;
-import Game.Players.Knight;
+import Game.MythicalCreatures.*;
+import Game.Items.*;
+import Game.Players.*;
 import Game.Rooms.Room;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
 public class RoomTest {
 
     Room room;
+    Ogre ogre;
+    Spell spell;
+    Weapon sword;
+    Dragon dragon;
     Cleric cleric;
     Knight knight1;
     Knight knight2;
-    HealingTool healingTool;
     Weapon weapon1;
     Weapon weapon2;
+    ArrayList<Item> loot;
+    ArrayList<MythicalCreature> enemies;
+    HealingTool healingTool;
 
     @Before
     public void before() {
@@ -31,7 +36,19 @@ public class RoomTest {
         weapon2 = new Weapon(WeaponType.AXE);
         knight2 = new Knight("Kirsty", weapon2);
 
-        room = new Room();
+        ogre = new Ogre("Henry", 60);
+        dragon = new Dragon("Alby", 100);
+        enemies = new ArrayList<MythicalCreature>();
+        enemies.add(ogre);
+        enemies.add(dragon);
+
+        spell = new Spell(SpellType.FIRE);
+        sword = new Weapon(WeaponType.CLAYMORE);
+        loot = new ArrayList<Item>();
+        loot.add(spell);
+        loot.add(sword);
+
+        room = new Room(enemies, loot);
     }
 
     @Test
@@ -46,4 +63,23 @@ public class RoomTest {
         room.addPlayer(knight2);
         assertEquals(3, room.countPlayers());
     }
+
+    @Test
+    public void canRemovePlayers(){
+        room.removePlayers();
+        assertEquals(0, room.countPlayers());
+    }
+
+    @Test
+    public void startsWithEnemies(){
+        assertEquals(2, room.countEnemies());
+    }
+
+    @Test
+    public void startsWithLoot(){
+        assertEquals(2, room.countLoot());
+    }
+
+
+
 }
