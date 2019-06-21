@@ -11,19 +11,26 @@ import java.util.ArrayList;
 public abstract class MagicUser extends Player implements IFightable {
 
     private ArrayList<Spell> spells;
+    private int spellCapacity;
     private Spell equippedSpell;
     private MythicalCreature creature;
     private Boolean creatureDefending;
 
-    public MagicUser(String name, ArrayList<Spell> spells, MythicalCreature creature) {
+    public MagicUser(String name, Spell equippedSpell, MythicalCreature creature) {
         super(name, 20, 0);
-        this.spells = spells;
+        this.spells = new ArrayList<Spell>();
+        this.spellCapacity = 6;
+        this.equippedSpell = equippedSpell;
         this.creature = creature;
         this.creatureDefending = false;
     }
 
     public int getNumOfSpells(){
         return this.spells.size();
+    }
+
+    public Spell getEquippedSpell(){
+        return this.equippedSpell;
     }
 
     public MythicalCreature getCreature(){
@@ -33,16 +40,18 @@ public abstract class MagicUser extends Player implements IFightable {
     public void equipSpell(SpellType spellType) {
         for (Spell spell : spells) {
             if (spell.getType() == spellType) {
-                equippedSpell = spell;
+                this.equippedSpell = spell;
             }
         }
     }
 
     public int fight(){
-        return equippedSpell.getType().getDamage();
+        return this.equippedSpell.getType().getDamage();
     }
 
     public void addSpell(Spell spell) {
-        this.spells.add(spell);
+        if(getNumOfSpells() < this.spellCapacity) {
+            this.spells.add(spell);
+        }
     }
 }
