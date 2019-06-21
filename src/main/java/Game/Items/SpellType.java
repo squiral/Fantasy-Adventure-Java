@@ -5,13 +5,13 @@ public enum SpellType {
     ICE(10),
     LIGHTNING(15);
 
-    private final int value;
+    private final int damage;
 
-    SpellType(int value){
-        this.value = value;
+    SpellType(int damage){
+        this.damage = damage;
     }
 
-    public int getValue(){
-        return this.value;
+    public int getDamage(){
+        return this.damage;
     }
 }
