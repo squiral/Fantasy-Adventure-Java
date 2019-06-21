@@ -35,7 +35,12 @@ public class RoomTest {
     }
 
     @Test
-    public void canHavePlayers(){
+    public void startsWith0Players(){
         assertEquals(0, room.countPlayers());
+    }
+
+    @Test
+    public void canAddPlayers(){
+        assertEquals(3, room.countPlayers());
     }
 }
