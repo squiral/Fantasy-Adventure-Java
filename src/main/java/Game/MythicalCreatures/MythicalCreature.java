@@ -1,6 +1,9 @@
 package Game.MythicalCreatures;
 
-public abstract class MythicalCreature {
+import Game.Behaviours.IAttackable;
+import Game.Behaviours.IFightable;
+
+public abstract class MythicalCreature implements IFightable, IAttackable{
 
     protected String name;
     protected Integer health;
@@ -24,7 +27,7 @@ public abstract class MythicalCreature {
         health += damage;
     }
 
-    public int getAttackPower() {
+    public int fight() {
         return attackPower;
     }
 }
