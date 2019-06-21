@@ -15,4 +15,8 @@ public abstract class Fighter extends Player {
     public Weapon getWeapon(){
         return this.weapon;
     }
+
+    public void equipWeapon(Weapon newWeapon) {
+        this.weapon = newWeapon;
+    }
 }
