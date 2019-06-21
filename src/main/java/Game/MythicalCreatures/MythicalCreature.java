@@ -20,7 +20,7 @@ public abstract class MythicalCreature implements IFightable, IAttackable {
         return name;
     }
 
-    public Integer getHealth() {
+    public int getHealth() {
         return health;
     }
 

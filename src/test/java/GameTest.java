@@ -27,7 +27,7 @@ public class GameTest {
     @Before
     public void  before(){
         sword = new Weapon(WeaponType.RUSTY_SWORD);
-        dragon = new Dragon("Paul", 200);
+        dragon = new Dragon("Paul");
         knight = new Knight("Daniel", sword);
         spell = new Spell(SpellType.LIGHTNING);
         wizard = new Wizard("Gan-Dee", spell, dragon);
@@ -44,13 +44,13 @@ public class GameTest {
     @Test
     public void canDealDamageToMythical(){
         game.dealDamage(knight,dragon);
-        assertEquals(190, dragon.getHealth(), 00);
+        assertEquals(70, dragon.getHealth());
     }
 
-    @Test
-    public void wizardCanBeAttacked(){
-        game.dealDamage(dragon, wizard);
-        assertEquals(90, wizard.getHealth());
-    }
+//    @Test
+//    public void wizardCanBeAttacked(){
+//        game.dealDamage(dragon, wizard);
+//        assertEquals(90, wizard.getHealth());
+//    }
 
 }

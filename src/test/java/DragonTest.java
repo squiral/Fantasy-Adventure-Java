@@ -10,7 +10,7 @@ public class DragonTest {
 
     @Before
     public void before(){
-        dragon = new Dragon("Death Terry", 1000);
+        dragon = new Dragon("Death Terry");
     }
 
     @Test
@@ -25,7 +25,13 @@ public class DragonTest {
 
     @Test
     public void canGetHealth(){
-        assertEquals(1000, dragon.getHealth(), 00);
+        assertEquals(80, dragon.getHealth());
+    }
+
+    @Test
+    public void canTakeDamage(){
+        dragon.takeDamage(20);
+        assertEquals(60, dragon.getHealth());
     }
 }
 

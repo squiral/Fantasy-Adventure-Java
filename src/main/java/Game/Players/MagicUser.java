@@ -54,7 +54,7 @@ public abstract class MagicUser extends Player implements IFightable {
     }
 
     public void takeDamage(int damage){
-        if(this.creatureDefending){
+        if(this.canCreatureDefend()){
             this.creature.takeDamage(damage);
         } else {
             this.health -= damage;
@@ -67,7 +67,13 @@ public abstract class MagicUser extends Player implements IFightable {
         }
     }
 
-    public void creatureDefend(boolean b) {
-        this.creatureDefending = b;
+    public boolean canCreatureDefend() {
+        Boolean canDefend = true;
+
+        if(creature.getHealth() < 50){
+            canDefend = false;
+        }
+
+        return canDefend;
     }
 }
