@@ -29,7 +29,7 @@ public class GameTest {
     @Test
     public void canDealDamageToPlayer(){
         game.dealDamage(dragon, knight);
-        assertEquals(90, knight.getHealth());
+        assertEquals(95, knight.getHealth());
     }
 
     @Test
