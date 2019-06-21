@@ -14,4 +14,8 @@ public class Cleric extends Player {
     public HealingTool getHealingTool() {
         return healingTool;
     }
+
+    public void equipHealingTool(HealingTool newHealingTool) {
+        this.healingTool = newHealingTool;
+    }
 }
