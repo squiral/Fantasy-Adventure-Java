@@ -1,5 +1,6 @@
-import Game.Items.HealingTool;
-import Game.Items.HealingToolType;
+package Players;
+
+import Game.Items.*;
 import Game.Players.Cleric;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,3 +1,5 @@
+package Items;
+
 import Game.Items.Spell;
 import Game.Items.SpellType;
 import org.junit.Before;

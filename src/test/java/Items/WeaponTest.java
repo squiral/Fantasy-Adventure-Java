@@ -1,5 +1,6 @@
-import Game.Items.Weapon;
-import Game.Items.WeaponType;
+package Items;
+
+import Game.Items.*;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,12 +1,9 @@
-import Game.Items.Spell;
-import Game.Items.SpellType;
-import Game.Items.Weapon;
-import Game.Items.WeaponType;
-import Game.MythicalCreatures.Dragon;
-import Game.Players.Knight;
-import Game.Players.Player;
+import Game.MythicalCreatures.*;
+import Game.Players.Fighters.*;
+import Game.Players.MagicUsers.*;
+import Game.Players.Cleric;
+import Game.Items.*;
 import Game.Game;
-import Game.Players.Wizard;
 import org.junit.Before;
 import org.junit.Test;
 
