@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Wizard extends MagicUser {
 
-    public Wizard(String name, ArrayList<Spell> spells, MythicalCreature creature){
-        super(name, spells, creature);
+    public Wizard(String name, Spell equippedSpell, MythicalCreature creature){
+        super(name, equippedSpell, creature);
     }
 
 

@@ -18,7 +18,6 @@ public class WizardTest {
     Dragon dragon;
     Spell spell1;
     Spell spell2;
-    ArrayList<Spell> spells = new ArrayList<Spell>();
 
 
     @Before
@@ -26,9 +25,7 @@ public class WizardTest {
         dragon = new Dragon("Snappy", 50);
         spell1 = new Spell(SpellType.FIRE);
         spell2 = new Spell(SpellType.ICE);
-        spells.add(spell1);
-        spells.add(spell2);
-        wizard = new Wizard("Usidore", spells, dragon);
+        wizard = new Wizard("Usidore", spell1, dragon);
     }
 
     @Test
@@ -42,13 +39,21 @@ public class WizardTest {
     }
 
     @Test
-    public void hasSpells(){
-        assertEquals(2, wizard.getNumOfSpells());
+    public void hasEquipedSpellWhenCreated(){
+        assertTrue(wizard.getEquippedSpell() instanceof Spell);
     }
 
     @Test
+    public void hasNoSpellsWhenCreated(){
+        assertEquals(0, wizard.getNumOfSpells());
+    }
+    @Test
     public void canAddSpell(){
         wizard.addSpell(spell1);
-        assertEquals(3, wizard.getNumOfSpells());
+        wizard.addSpell(spell2);
+        assertEquals(2, wizard.getNumOfSpells());
     }
+
+
+
 }
