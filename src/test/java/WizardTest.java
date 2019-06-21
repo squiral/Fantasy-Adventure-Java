@@ -75,6 +75,23 @@ public class WizardTest {
     }
 
     @Test
+    public void cannotEquipSpellWizardDoesNotHave(){
+        wizard.addSpell(spell2);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+        wizard.equipSpell(SpellType.LIGHTNING);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+    }
+
+    @Test
+    public void canEquipSpellWizardHas(){
+        wizard.addSpell(spell2);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+        wizard.equipSpell(SpellType.ICE);
+        assertEquals(SpellType.ICE, wizard.getEquippedSpell().getType());
+
+    }
+
+    @Test
     public void canSetInitiative(){
         assertEquals(0, wizard.getInitiative());
 
