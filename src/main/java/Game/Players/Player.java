@@ -10,7 +10,7 @@ public abstract class Player implements IAttackable{
     private String name;
     protected int health;
     private ArrayList<Item> inventory;
-    private int inventorySize;
+    private int inventoryCapacity;
     private int maxCarryWeight;
     private int currentWeightTotal;
 
@@ -18,7 +18,7 @@ public abstract class Player implements IAttackable{
         this.name = name;
         this.health = 100;
         this.inventory = new ArrayList<Item>();
-        this.inventorySize = 4;
+        this.inventoryCapacity = 4;
         this.maxCarryWeight = maxCarryWeight;
         this.currentWeightTotal = currentWeightTotal;
     }
@@ -37,7 +37,7 @@ public abstract class Player implements IAttackable{
     }
 
     public int getInventorySize() {
-        return inventorySize;
+        return inventoryCapacity;
     }
 
     public int getMaxCarryWeight() {
@@ -49,7 +49,7 @@ public abstract class Player implements IAttackable{
     }
 
     public void addItem(Item item){
-        if(this.inventory.size() < inventorySize && currentWeightTotal + item.getWeight() <= maxCarryWeight) {
+        if(this.inventory.size() < inventoryCapacity && currentWeightTotal + item.getWeight() <= maxCarryWeight) {
             this.inventory.add(item);
             this.currentWeightTotal += item.getWeight();
         }
