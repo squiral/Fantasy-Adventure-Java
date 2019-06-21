@@ -15,7 +15,7 @@ public class DragonTest {
 
     @Test
     public void canGetAttackPower(){
-        assertEquals(10, dragon.getAttackPower());
+        assertEquals(10, dragon.fight());
     }
 
     @Test

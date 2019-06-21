@@ -1,6 +1,5 @@
 package Game.Players;
 
-import Game.Behaviours.IHealable;
 import Game.Items.HealingTool;
 
 public class Cleric extends Player {
@@ -14,5 +13,9 @@ public class Cleric extends Player {
 
     public HealingTool getHealingTool() {
         return healingTool;
+    }
+
+    public void equipHealingTool(HealingTool newHealingTool) {
+        this.healingTool = newHealingTool;
     }
 }

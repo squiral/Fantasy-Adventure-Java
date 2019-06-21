@@ -1,4 +1,4 @@
 package Game.Behaviours;
 
-public class IAssistable {
+public interface IAssistable {
 }

@@ -10,4 +10,8 @@ public class HealingTool extends Item {
 
     }
 
+    public HealingToolType getType() {
+        return this.healingToolType;
+    }
+
 }

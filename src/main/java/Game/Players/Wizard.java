@@ -10,4 +10,6 @@ public class Wizard extends MagicUser {
     public Wizard(String name, ArrayList<Spell> spells, IAssistable creature){
         super(name, spells, creature);
     }
+
+
 }
