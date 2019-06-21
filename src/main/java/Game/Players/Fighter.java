@@ -1,9 +1,10 @@
 package Game.Players;
 
+import Game.Behaviours.IFightable;
 import Game.Items.Weapon;
 import Game.Items.WeaponType;
 
-public abstract class Fighter extends Player {
+public abstract class Fighter extends Player implements IFightable{
 
     private Weapon weapon;
 
@@ -15,4 +16,12 @@ public abstract class Fighter extends Player {
     public Weapon getWeapon(){
         return this.weapon;
     }
+
+    public int fight(){
+        return  this.weapon.getDamage();
+    }
+
+
+
+
 }

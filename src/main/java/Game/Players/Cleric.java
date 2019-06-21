@@ -1,6 +1,5 @@
 package Game.Players;
 
-import Game.Behaviours.IHealable;
 import Game.Items.HealingTool;
 
 public class Cleric extends Player {

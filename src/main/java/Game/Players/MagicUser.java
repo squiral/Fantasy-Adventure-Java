@@ -1,4 +1,6 @@
 package Game.Players;
 
-public abstract class MagicUser {
+import Game.Behaviours.IFightable;
+
+public abstract class MagicUser implements IFightable{
 }

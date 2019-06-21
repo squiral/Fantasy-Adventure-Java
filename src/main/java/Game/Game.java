@@ -1,5 +1,7 @@
 package Game;
 
+import Game.Behaviours.IAttackable;
+import Game.Behaviours.IFightable;
 import Game.MythicalCreatures.Dragon;
 import Game.MythicalCreatures.MythicalCreature;
 import Game.MythicalCreatures.Ogre;
@@ -15,6 +17,8 @@ public class Game {
     private MythicalCreature mythicalCreature;
     private Knight knight;
     private Cleric cleric;
+    private IFightable attacker;
+    private IAttackable victim;
 
 
     public Game(Player player, MythicalCreature mythicalCreature){
@@ -22,8 +26,8 @@ public class Game {
         this.mythicalCreature = mythicalCreature;
         }
 
-    public void dealDamage(MythicalCreature mythicalCreature, Player player){
-        int damage = mythicalCreature.getAttackPower();
-        player.takeDamage(damage);
+    public void dealDamage(IFightable attacker, IAttackable victim){
+        int damage = attacker.fight();
+        victim.takeDamage(damage);
     }
 }

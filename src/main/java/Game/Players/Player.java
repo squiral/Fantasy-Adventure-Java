@@ -1,10 +1,11 @@
 package Game.Players;
 
+import Game.Behaviours.IAttackable;
 import Game.Items.Item;
 
 import java.util.ArrayList;
 
-public abstract class Player {
+public abstract class Player implements IAttackable{
 
     private String name;
     private int health;

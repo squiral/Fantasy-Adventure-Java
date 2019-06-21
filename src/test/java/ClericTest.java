@@ -1,4 +1,3 @@
-import Game.Behaviours.IHealable;
 import Game.Items.HealingTool;
 import Game.Items.HealingToolType;
 import Game.Players.Cleric;
