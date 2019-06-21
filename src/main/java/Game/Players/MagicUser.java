@@ -37,6 +37,10 @@ public abstract class MagicUser extends Player implements IFightable {
         return this.creature;
     }
 
+    public boolean isCreatureDefending(){
+        return this.creatureDefending;
+    }
+
     public void equipSpell(SpellType spellType) {
         for (Spell spell : spells) {
             if (spell.getType() == spellType) {
@@ -49,9 +53,21 @@ public abstract class MagicUser extends Player implements IFightable {
         return this.equippedSpell.getType().getDamage();
     }
 
+    public void takeDamage(int damage){
+        if(this.creatureDefending){
+            this.creature.takeDamage(damage);
+        } else {
+            this.health -= damage;
+        }
+    }
+
     public void addSpell(Spell spell) {
         if(getNumOfSpells() < this.spellCapacity) {
             this.spells.add(spell);
         }
+    }
+
+    public void creatureDefend(boolean b) {
+        this.creatureDefending = b;
     }
 }
