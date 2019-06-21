@@ -27,9 +27,15 @@ public class GameTest {
 
 
     @Test
-    public void canDealDamage(){
+    public void canDealDamageToPlayer(){
         game.dealDamage(dragon, knight);
         assertEquals(90, knight.getHealth());
+    }
+
+    @Test
+    public void canDealDamageToMythical(){
+        game.dealDamage(knight,dragon);
+        assertEquals(190, dragon.getHealth(), 00);
     }
 
 }
