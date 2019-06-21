@@ -54,6 +54,19 @@ public class WizardTest {
         assertEquals(2, wizard.getNumOfSpells());
     }
 
+    @Test
+    public void canHaveCreatureDefend(){
+        wizard.creatureDefend(true);
+        assertTrue(wizard.isCreatureDefending());
+
+        int damage = dragon.fight();
+        wizard.takeDamage(damage);
+        assertEquals(100, wizard.getHealth());
+
+        wizard.creatureDefend(false);
+        wizard.takeDamage(damage);
+        assertEquals(90, wizard.getHealth());
+    }
 
 
 }
