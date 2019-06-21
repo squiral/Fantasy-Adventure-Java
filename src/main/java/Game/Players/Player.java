@@ -4,6 +4,7 @@ import Game.Behaviours.IAttackable;
 import Game.Items.Item;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class Player implements IAttackable{
 
@@ -13,6 +14,7 @@ public abstract class Player implements IAttackable{
     private int inventoryCapacity;
     private int maxCarryWeight;
     private int currentWeightTotal;
+    private int initiative;
 
     public Player(String name, int maxCarryWeight, int currentWeightTotal){
         this.name = name;
@@ -21,6 +23,7 @@ public abstract class Player implements IAttackable{
         this.inventoryCapacity = 4;
         this.maxCarryWeight = maxCarryWeight;
         this.currentWeightTotal = currentWeightTotal;
+        this.initiative = 0;
     }
 
 
@@ -64,6 +67,16 @@ public abstract class Player implements IAttackable{
         if(this.health > 100){
             this.health = 100;
         }
+    }
+
+    public int getInitiative(){
+        return this.initiative;
+    }
+
+    public void setInitiative(){
+        Random rand = new Random();
+        int n = rand.nextInt(19);
+        this.initiative = n + 1;
     }
 
 }

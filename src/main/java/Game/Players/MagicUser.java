@@ -14,7 +14,6 @@ public abstract class MagicUser extends Player implements IFightable {
     private int spellCapacity;
     private Spell equippedSpell;
     private MythicalCreature creature;
-    private Boolean creatureDefending;
 
     public MagicUser(String name, Spell equippedSpell, MythicalCreature creature) {
         super(name, 20, 0);
@@ -22,7 +21,6 @@ public abstract class MagicUser extends Player implements IFightable {
         this.spellCapacity = 6;
         this.equippedSpell = equippedSpell;
         this.creature = creature;
-        this.creatureDefending = false;
     }
 
     public int getNumOfSpells(){
@@ -35,10 +33,6 @@ public abstract class MagicUser extends Player implements IFightable {
 
     public MythicalCreature getCreature(){
         return this.creature;
-    }
-
-    public boolean isCreatureDefending(){
-        return this.creatureDefending;
     }
 
     public void equipSpell(SpellType spellType) {
@@ -54,8 +48,8 @@ public abstract class MagicUser extends Player implements IFightable {
     }
 
     public void takeDamage(int damage){
-        if(this.creatureDefending){
-            this.creature.takeDamage(damage);
+        if(creature.canDefend()){
+            creature.takeDamage(damage);
         } else {
             this.health -= damage;
         }
@@ -67,7 +61,4 @@ public abstract class MagicUser extends Player implements IFightable {
         }
     }
 
-    public void creatureDefend(boolean b) {
-        this.creatureDefending = b;
-    }
 }

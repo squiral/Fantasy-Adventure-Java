@@ -1,7 +1,7 @@
 package Game.MythicalCreatures;
 
 public class Ogre extends MythicalCreature {
-    public Ogre(String name, Integer health) {
-        super(name, health, 3);
+    public Ogre(String name) {
+        super(name, 60, 3);
     }
 }

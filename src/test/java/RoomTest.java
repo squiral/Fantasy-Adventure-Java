@@ -36,8 +36,8 @@ public class RoomTest {
         weapon2 = new Weapon(WeaponType.AXE);
         knight2 = new Knight("Kirsty", weapon2);
 
-        ogre = new Ogre("Henry", 60);
-        dragon = new Dragon("Alby", 100);
+        ogre = new Ogre("Henry");
+        dragon = new Dragon("Alby");
         enemies = new ArrayList<MythicalCreature>();
         enemies.add(ogre);
         enemies.add(dragon);

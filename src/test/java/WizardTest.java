@@ -22,7 +22,7 @@ public class WizardTest {
 
     @Before
     public void before(){
-        dragon = new Dragon("Snappy", 50);
+        dragon = new Dragon("Snappy");
         spell1 = new Spell(SpellType.FIRE);
         spell2 = new Spell(SpellType.ICE);
         wizard = new Wizard("Usidore", spell1, dragon);
@@ -39,7 +39,7 @@ public class WizardTest {
     }
 
     @Test
-    public void hasEquipedSpellWhenCreated(){
+    public void hasEquippedSpellWhenCreated(){
         assertTrue(wizard.getEquippedSpell() instanceof Spell);
     }
 
@@ -47,6 +47,7 @@ public class WizardTest {
     public void hasNoSpellsWhenCreated(){
         assertEquals(0, wizard.getNumOfSpells());
     }
+
     @Test
     public void canAddSpell(){
         wizard.addSpell(spell1);
@@ -55,18 +56,49 @@ public class WizardTest {
     }
 
     @Test
-    public void canHaveCreatureDefend(){
-        wizard.creatureDefend(true);
-        assertTrue(wizard.isCreatureDefending());
-
-        int damage = dragon.fight();
-        wizard.takeDamage(damage);
+    public void wizardStartsWith100Health(){
         assertEquals(100, wizard.getHealth());
-
-        wizard.creatureDefend(false);
-        wizard.takeDamage(damage);
-        assertEquals(90, wizard.getHealth());
     }
+
+
+    @Test
+    public void canHaveCreatureDefend(){
+        wizard.takeDamage(30);
+        assertEquals(100, wizard.getHealth());
+    }
+
+    @Test
+    public void canTakeDamageWhenCreatureCantDefend(){
+        dragon.takeDamage(71);
+        wizard.takeDamage(30);
+        assertEquals(70, wizard.getHealth());
+    }
+
+    @Test
+    public void cannotEquipSpellWizardDoesNotHave(){
+        wizard.addSpell(spell2);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+        wizard.equipSpell(SpellType.LIGHTNING);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+    }
+
+    @Test
+    public void canEquipSpellWizardHas(){
+        wizard.addSpell(spell2);
+        assertEquals(SpellType.FIRE, wizard.getEquippedSpell().getType());
+        wizard.equipSpell(SpellType.ICE);
+        assertEquals(SpellType.ICE, wizard.getEquippedSpell().getType());
+
+    }
+
+    @Test
+    public void canSetInitiative(){
+        assertEquals(0, wizard.getInitiative());
+
+        wizard.setInitiative();
+        assertTrue(wizard.getInitiative() > 0 && wizard.getInitiative() <= 20);
+    }
+
 
 
 }
