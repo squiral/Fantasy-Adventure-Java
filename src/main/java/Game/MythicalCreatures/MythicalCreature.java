@@ -24,7 +24,7 @@ public abstract class MythicalCreature implements IFightable, IAttackable{
     }
 
     public void takeDamage(int damage) {
-        health += damage;
+        health -= damage;
     }
 
     public int fight() {
