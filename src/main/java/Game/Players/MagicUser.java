@@ -22,7 +22,6 @@ public abstract class MagicUser extends Player implements IFightable {
         this.spellCapacity = 6;
         this.equippedSpell = equippedSpell;
         this.creature = creature;
-        this.creatureDefending = false;
     }
 
     public int getNumOfSpells(){
@@ -54,8 +53,8 @@ public abstract class MagicUser extends Player implements IFightable {
     }
 
     public void takeDamage(int damage){
-        if(this.canCreatureDefend()){
-            this.creature.takeDamage(damage);
+        if(creature.canDefend()){
+            creature.takeDamage(damage);
         } else {
             this.health -= damage;
         }
@@ -67,13 +66,4 @@ public abstract class MagicUser extends Player implements IFightable {
         }
     }
 
-    public boolean canCreatureDefend() {
-        Boolean canDefend = true;
-
-        if(creature.getHealth() < 50){
-            canDefend = false;
-        }
-
-        return canDefend;
-    }
 }

@@ -38,6 +38,12 @@ public class DragonTest {
     public void canDefend(){
         assertEquals(true, dragon.canDefend());
     }
+
+    @Test
+    public void cantDefendWhenBelow10Health(){
+        dragon.takeDamage(71);
+        assertEquals(false, dragon.canDefend());
+    }
 }
 
 

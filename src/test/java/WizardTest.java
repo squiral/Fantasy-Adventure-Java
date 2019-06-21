@@ -56,8 +56,24 @@ public class WizardTest {
     }
 
     @Test
-    public void canHaveCreatureDefend(){
+    public void wizardStartsWith100Health(){
+        assertEquals(100, wizard.getHealth());
     }
+
+
+    @Test
+    public void canHaveCreatureDefend(){
+        wizard.takeDamage(30);
+        assertEquals(100, wizard.getHealth());
+    }
+
+    @Test
+    public void canTakeDamageWhenCreatureCantDefend(){
+        dragon.takeDamage(71);
+        wizard.takeDamage(30);
+        assertEquals(70, wizard.getHealth());
+    }
+
 
 
 }
