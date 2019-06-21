@@ -11,6 +11,10 @@ public class Knight extends Fighter{
         super(name, weapon);
         this.armourDefence = 5;
 
+        public void takeDamage(int damage){
+            
+        };
+
     }
 
 }
