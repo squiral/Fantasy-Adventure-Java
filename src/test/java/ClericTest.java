@@ -20,7 +20,7 @@ public class ClericTest {
         healingTool2 = new HealingTool(HealingToolType.CALPOL);
         healingTool3 = new HealingTool(HealingToolType.PLASTER);
         healingTool4 = new HealingTool(HealingToolType.SPLINT);
-        cleric = new Cleric("Clarence", 20, healingTool1);
+        cleric = new Cleric("Clarence", healingTool1);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class ClericTest {
 
     @Test
     public void hasMaxCarryWeight() {
-        assertEquals(20, cleric.getMaxCarryWeight());
+        assertEquals(30, cleric.getMaxCarryWeight());
     }
 
     @Test
