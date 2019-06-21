@@ -41,6 +41,9 @@ public class RoomTest {
 
     @Test
     public void canAddPlayers(){
+        room.addPlayer(cleric);
+        room.addPlayer(knight1);
+        room.addPlayer(knight2);
         assertEquals(3, room.countPlayers());
     }
 }

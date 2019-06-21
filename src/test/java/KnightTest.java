@@ -89,14 +89,14 @@ public class KnightTest {
     @Test
     public void canTakeDamage(){
         knight.takeDamage(10);
-        assertEquals(90, knight.getHealth());
+        assertEquals(95, knight.getHealth());
     }
 
     @Test
     public void canRecover(){
         knight.takeDamage(30);
         knight.recover(10);
-        assertEquals(80, knight.getHealth());
+        assertEquals(85, knight.getHealth());
     }
 
     @Test

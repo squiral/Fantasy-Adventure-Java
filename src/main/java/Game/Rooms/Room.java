@@ -3,6 +3,7 @@ package Game.Rooms;
 
 import Game.Items.Item;
 import Game.MythicalCreatures.MythicalCreature;
+import Game.Players.Cleric;
 import Game.Players.Player;
 
 import java.util.ArrayList;
@@ -22,5 +23,9 @@ public class Room {
 
     public int countPlayers() {
         return this.players.size();
+    }
+
+    public void addPlayer(Player player) {
+        this.players.add(player);
     }
 }
