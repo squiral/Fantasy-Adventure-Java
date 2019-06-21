@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public abstract class Player implements IAttackable{
 
     private String name;
-    private int health;
+    protected int health;
     private ArrayList<Item> inventory;
     private int inventoryCapacity;
     private int maxCarryWeight;
