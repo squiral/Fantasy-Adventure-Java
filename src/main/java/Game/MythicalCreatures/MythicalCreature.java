@@ -1,9 +1,10 @@
 package Game.MythicalCreatures;
 
+import Game.Behaviours.IAssistable;
 import Game.Behaviours.IAttackable;
 import Game.Behaviours.IFightable;
 
-public abstract class MythicalCreature implements IFightable, IAttackable{
+public abstract class MythicalCreature implements IFightable, IAttackable {
 
     protected String name;
     protected Integer health;
