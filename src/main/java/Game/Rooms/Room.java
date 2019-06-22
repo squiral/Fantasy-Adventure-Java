@@ -4,6 +4,7 @@ import Game.Behaviours.IAttackable;
 import Game.Behaviours.IFightable;
 import Game.MythicalCreatures.MythicalCreature;
 import Game.Items.Item;
+import Game.Players.MagicUsers.Wizard;
 import Game.Players.Player;
 import java.util.ArrayList;
 
@@ -55,10 +56,17 @@ public class Room {
         players.remove(deadPlayer);
     }
 
-
     public void dealDamage(IFightable attacker, IAttackable victim){
         int damage = attacker.fight();
         victim.takeDamage(damage);
+    }
+
+    public void enemiesAttack(){
+        for(Player player: players){
+            for(MythicalCreature creature: enemies){
+                dealDamage(creature, player);
+            }
+        }
     }
 
 

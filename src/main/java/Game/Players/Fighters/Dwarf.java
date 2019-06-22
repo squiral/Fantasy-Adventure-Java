@@ -8,5 +8,4 @@ public class Dwarf extends Fighter {
         super(name, weapon);
     }
 
-
 }

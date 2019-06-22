@@ -102,5 +102,16 @@ public class RoomTest {
         assertEquals( 1, room.countPlayers());
     }
 
+    @Test
+    public void canBeAttackedByEnemies(){
+        room.addPlayer(cleric);
+        room.addPlayer(knight1);
+        room.addPlayer(wizard);
+        assertEquals( 3, room.countPlayers());
+        room.enemiesAttack();
+        room.removeDeadPlayer();
+        assertEquals( 0, room.countPlayers());
+    }
+
 
 }
