@@ -1,8 +1,8 @@
-package Game.Players;
+package Game.Players.Fighters;
 
 import Game.Behaviours.IFightable;
 import Game.Items.Weapon;
-import Game.Items.WeaponType;
+import Game.Players.Player;
 
 public abstract class Fighter extends Player implements IFightable{
 

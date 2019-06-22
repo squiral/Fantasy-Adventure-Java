@@ -1,10 +1,11 @@
-package Game.Players;
+package Game.Players.MagicUsers;
 
 import Game.Behaviours.IFightable;
 import Game.Behaviours.IAssistable;
 import Game.Items.Spell;
 import Game.Items.SpellType;
 import Game.MythicalCreatures.MythicalCreature;
+import Game.Players.Player;
 
 import java.util.ArrayList;
 

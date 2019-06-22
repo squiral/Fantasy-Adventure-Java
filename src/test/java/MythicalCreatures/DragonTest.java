@@ -1,3 +1,5 @@
+package MythicalCreatures;
+
 import Game.MythicalCreatures.Dragon;
 import org.junit.Before;
 import org.junit.Test;

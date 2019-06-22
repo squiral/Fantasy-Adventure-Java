@@ -1,5 +1,7 @@
-import Game.Players.*;
+package Players;
+
 import Game.Items.*;
+import Game.Players.Fighters.Barbarian;
 import org.junit.Before;
 import org.junit.Test;
 

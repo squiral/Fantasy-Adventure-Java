@@ -1,8 +1,7 @@
-import Game.Items.HealingTool;
-import Game.Items.HealingToolType;
-import Game.Items.Weapon;
-import Game.Items.WeaponType;
-import Game.Players.Knight;
+package Players;
+
+import Game.Items.*;
+import Game.Players.Fighters.Knight;
 import org.junit.Before;
 import org.junit.Test;
 

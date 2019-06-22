@@ -1,9 +1,8 @@
-package Game.Players;
+package Game.Players.Fighters;
 
 import Game.Items.Weapon;
-import Game.Items.WeaponType;
 
-public class Knight extends Fighter{
+public class Knight extends Fighter {
 
     private int armourDefence;
 

@@ -1,5 +1,7 @@
+package Players;
+
 import Game.Items.*;
-import Game.Players.Dwarf;
+import Game.Players.Fighters.Dwarf;
 import org.junit.Before;
 import org.junit.Test;
 

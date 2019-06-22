@@ -1,10 +1,8 @@
-package Game.Players;
+package Game.Players.MagicUsers;
 
-import Game.Behaviours.IAssistable;
 import Game.Items.Spell;
 import Game.MythicalCreatures.MythicalCreature;
-
-import java.util.ArrayList;
+import Game.Players.MagicUsers.MagicUser;
 
 public class Wizard extends MagicUser {
 

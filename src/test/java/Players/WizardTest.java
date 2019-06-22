@@ -1,13 +1,10 @@
-import Game.Behaviours.IAssistable;
-import Game.Items.Spell;
-import Game.Items.SpellType;
+package Players;
+
 import Game.MythicalCreatures.Dragon;
-import Game.MythicalCreatures.MythicalCreature;
-import Game.Players.Wizard;
+import Game.Players.MagicUsers.Wizard;
+import Game.Items.*;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -1,4 +1,4 @@
-package Game.Players;
+package Game.Players.Fighters;
 
 import Game.Items.Weapon;
 

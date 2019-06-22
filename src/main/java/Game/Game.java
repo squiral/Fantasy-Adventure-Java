@@ -6,7 +6,7 @@ import Game.MythicalCreatures.Dragon;
 import Game.MythicalCreatures.MythicalCreature;
 import Game.MythicalCreatures.Ogre;
 import Game.Players.Cleric;
-import Game.Players.Knight;
+import Game.Players.Fighters.Knight;
 import Game.Players.Player;
 
 public class Game {

@@ -1,7 +1,11 @@
+package Rooms;
+
 import Game.MythicalCreatures.*;
-import Game.Items.*;
-import Game.Players.*;
+import Game.Players.Fighters.*;
+import Game.Players.MagicUsers.*;
+import Game.Players.Cleric;
 import Game.Rooms.Room;
+import Game.Items.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,11 +20,11 @@ public class RoomTest {
     Spell spell;
     Weapon sword;
     Dragon dragon;
+    Dragon gerard;
     Cleric cleric;
-    Knight knight1;
-    Knight knight2;
+    Knight knight;
+    Wizard wizard;
     Weapon weapon1;
-    Weapon weapon2;
     ArrayList<Item> loot;
     ArrayList<MythicalCreature> enemies;
     HealingTool healingTool;
@@ -31,10 +35,11 @@ public class RoomTest {
         cleric = new Cleric("Clarence", healingTool);
 
         weapon1 = new Weapon(WeaponType.DAGGER);
-        knight1 = new Knight("Chester", weapon1);
+        knight = new Knight("Chester", weapon1);
 
-        weapon2 = new Weapon(WeaponType.AXE);
-        knight2 = new Knight("Kirsty", weapon2);
+        spell = new Spell(SpellType.FIRE);
+        gerard = new Dragon("Gerard");
+        wizard = new Wizard("Usidore", spell, dragon);
 
         ogre = new Ogre("Henry");
         dragon = new Dragon("Alby");
@@ -59,8 +64,8 @@ public class RoomTest {
     @Test
     public void canAddPlayers(){
         room.addPlayer(cleric);
-        room.addPlayer(knight1);
-        room.addPlayer(knight2);
+        room.addPlayer(knight);
+        room.addPlayer(wizard);
         assertEquals(3, room.countPlayers());
     }
 
