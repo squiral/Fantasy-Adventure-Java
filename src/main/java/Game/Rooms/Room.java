@@ -63,7 +63,9 @@ public class Room {
 
     public void enemiesAttack(){
         for(Player player: players){
-                dealDamage(enemies.get(0), player);
+            for(MythicalCreature creature: enemies){
+                dealDamage(creature, player);
+            }
         }
     }
 

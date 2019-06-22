@@ -112,8 +112,8 @@ public class RoomTest {
         room.removeDeadPlayer();
         room.removeDeadPlayer();
         assertEquals( 0, room.countPlayers());
-        assertEquals(0, knight1.getHealth());
-        assertEquals(-5, cleric.getHealth());
+        assertEquals(-5, knight1.getHealth());
+        assertEquals(-15, cleric.getHealth());
     }
 
 
