@@ -80,6 +80,22 @@ public class RoomTest {
         assertEquals(2, room.countLoot());
     }
 
+    @Test
+    public void canRemoveDeadPlayers(){
+        room.dealDamage(ogre, knight1);
+        room.addPlayer(cleric);
+        room.addPlayer(knight1);
+        assertEquals( knight1, room.findDeadPlayers());
+    }
+
+    @Test
+    public void canRemoveFoundPlayer(){
+        room.dealDamage(ogre, knight1);
+        room.addPlayer(cleric);
+        room.addPlayer(knight1);
+        room.removeDeadPlayer();
+        assertEquals( 1, room.countPlayers());
+    }
 
 
 }

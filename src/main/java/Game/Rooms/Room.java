@@ -5,7 +5,6 @@ import Game.Behaviours.IFightable;
 import Game.MythicalCreatures.MythicalCreature;
 import Game.Items.Item;
 import Game.Players.Player;
-
 import java.util.ArrayList;
 
 public class Room {
@@ -41,8 +40,26 @@ public class Room {
         return this.loot.size();
     }
 
+
+    public Player findDeadPlayers(){
+        for(Player player: players){
+            if(player.getHealth() <= 0){
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public void removeDeadPlayer(){
+        Player deadPlayer = findDeadPlayers();
+        players.remove(deadPlayer);
+    }
+
+
     public void dealDamage(IFightable attacker, IAttackable victim){
         int damage = attacker.fight();
         victim.takeDamage(damage);
     }
-}
+
+
+    }

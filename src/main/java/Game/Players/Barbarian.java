@@ -2,6 +2,8 @@ package Game.Players;
 
 import Game.Items.Weapon;
 
+import java.util.Random;
+
 public class Barbarian extends Fighter {
 
     private Boolean berzerker;
@@ -12,7 +14,11 @@ public class Barbarian extends Fighter {
     }
 
     public void goBerzerk(){
-        this.berzerker = true;
+        Random rand = new Random();
+        int n = rand.nextInt(15);
+        if(n > 10) {
+            this.berzerker = true;
+        }
     }
 
     public int fight(){
