@@ -22,7 +22,7 @@ public class RoomTest {
     Dragon dragon;
     Dragon gerard;
     Cleric cleric;
-    Knight knight;
+    Knight knight1;
     Wizard wizard;
     Weapon weapon1;
     ArrayList<Item> loot;
@@ -35,7 +35,7 @@ public class RoomTest {
         cleric = new Cleric("Clarence", healingTool);
 
         weapon1 = new Weapon(WeaponType.DAGGER);
-        knight = new Knight("Chester", weapon1);
+        knight1 = new Knight("Chester", weapon1);
 
         spell = new Spell(SpellType.FIRE);
         gerard = new Dragon("Gerard");
@@ -64,7 +64,7 @@ public class RoomTest {
     @Test
     public void canAddPlayers(){
         room.addPlayer(cleric);
-        room.addPlayer(knight);
+        room.addPlayer(knight1);
         room.addPlayer(wizard);
         assertEquals(3, room.countPlayers());
     }
