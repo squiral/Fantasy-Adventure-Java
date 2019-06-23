@@ -86,20 +86,24 @@ public class RoomTest {
     }
 
     @Test
-    public void canRemoveDeadPlayers(){
+    public void canFindDeadPlayers(){
         room.dealDamage(ogre, knight1);
-        room.addPlayer(cleric);
         room.addPlayer(knight1);
-        assertEquals( knight1, room.findDeadPlayers());
+        room.dealDamage(ogre, cleric);
+        room.addPlayer(cleric);
+        assertEquals( knight1, room.findDeadPlayers().get(0));
+        assertEquals( cleric, room.findDeadPlayers().get(1));
     }
 
     @Test
-    public void canRemoveFoundPlayer(){
+    public void canRemoveDeadPlayer(){
         room.dealDamage(ogre, cleric);
         room.addPlayer(cleric);
-        room.addPlayer(wizard);
-        room.removeDeadPlayer();
-        assertEquals( 1, room.countPlayers());
+        room.dealDamage(ogre, knight1);
+        room.addPlayer(knight1);
+        room.removeDeadPlayers();
+        assertEquals( 0, room.countPlayers());
+//        assertEquals(knight1, room.getPlayers().get(0));
     }
 
     @Test
@@ -109,8 +113,8 @@ public class RoomTest {
 //        room.addPlayer(wizard);  - wizard had an issue with take health
         assertEquals( 2, room.countPlayers());
         room.enemiesAttack();
-        room.removeDeadPlayer();
-        room.removeDeadPlayer();
+        assertEquals(2, room.findDeadPlayers().size());
+        room.removeDeadPlayers();
         assertEquals( 0, room.countPlayers());
         assertEquals(-5, knight1.getHealth());
         assertEquals(-15, cleric.getHealth());

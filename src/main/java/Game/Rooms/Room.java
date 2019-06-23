@@ -29,6 +29,10 @@ public class Room {
         this.players.add(player);
     }
 
+    public ArrayList<Player> getPlayers(){
+        return this.players;
+    }
+
     public void removePlayers() {
         this.players.clear();
     }
@@ -42,18 +46,24 @@ public class Room {
     }
 
 
-    public Player findDeadPlayers(){
+    public ArrayList<Player> findDeadPlayers(){
+        ArrayList<Player> deadPlayers = new ArrayList<Player>();
         for(Player player: players){
             if(player.getHealth() <= 0){
-                return player;
+                deadPlayers.add(player);
             }
         }
-        return null;
+        return deadPlayers;
     }
 
-    public void removeDeadPlayer(){
-        Player deadPlayer = findDeadPlayers();
-        players.remove(deadPlayer);
+    public void removeDeadPlayers(){
+        ArrayList<Player> notDeadPlayers = new ArrayList<Player>();
+        for(Player player: players){
+            if(player.getHealth() > 0){
+                notDeadPlayers.add(player);
+            }
+        }
+        this.players = notDeadPlayers;
     }
 
     public void dealDamage(IFightable attacker, IAttackable victim){
