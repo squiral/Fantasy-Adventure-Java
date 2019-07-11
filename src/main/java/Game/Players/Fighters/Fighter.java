@@ -26,4 +26,6 @@ public abstract class Fighter extends Player implements IFightable{
         this.weapon = newWeapon;
     }
 
+
+
 }

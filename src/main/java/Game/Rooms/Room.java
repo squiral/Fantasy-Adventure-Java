@@ -4,6 +4,7 @@ import Game.Behaviours.IAttackable;
 import Game.Behaviours.IFightable;
 import Game.MythicalCreatures.MythicalCreature;
 import Game.Items.Item;
+import Game.Players.Cleric;
 import Game.Players.MagicUsers.Wizard;
 import Game.Players.Player;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 public class Room {
 
     private ArrayList<Player> players;
+    private ArrayList<IFightable> attackers;
     private ArrayList<Item> loot;
     private ArrayList<MythicalCreature> enemies;
 
@@ -68,6 +70,6 @@ public class Room {
             }
         }
     }
-
-
+    
     }
+

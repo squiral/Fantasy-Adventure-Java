@@ -116,5 +116,14 @@ public class RoomTest {
         assertEquals(-15, cleric.getHealth());
     }
 
+    @Test
+    public void canGetClasses(){
+        room.addPlayer(cleric);
+        room.addPlayer(knight1);
+        room.addPlayer(wizard);
+        room.playersAttack();
+        assertEquals(3, room.countPlayers());
+    }
+
 
 }
